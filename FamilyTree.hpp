@@ -2,35 +2,55 @@
 
 #ifndef UNTITLED2_FAMILYTREE_H
 #define UNTITLED2_FAMILYTREE_H
+
+#include <iostream>
+
+using namespace  std;
 class Node{
 public:
 
- char* name;
+ string name;
  Node* father;
  Node* mather;
 
-};
+ Node(string name)
+ {
+     this->name = name;
+     this->father = NULL;
+     this->mather = NULL;
 
-
-class Tree{
-
-public:
-    Node root;
-    Tree(Node);
-
-    void addFather(const char[] , const char[]);
-
-    void addMother(const char[] , const char[]);
-
-    char* relation(const char[]);
-
-    char* find(const char[]);
-
-    void display();
-
-    void remove(const char[]);
+ };
 
 };
+
+namespace family {
+
+
+    class Tree {
+
+    public:
+        Node *root;
+
+        Tree(string name) {
+            this->root = new Node(name);
+        };
+
+        void addFather( string,  string);
+
+        void addMother(const string, const string);
+
+        string relation(const string);
+
+        string find(const string);
+
+        void display();
+
+        void remove(const string);
+
+
+        Node *findthis(const string basicString, Node *pNode);
+    };
+}
 
 
 
