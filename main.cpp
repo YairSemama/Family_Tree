@@ -1,14 +1,21 @@
 #include <iostream>
-#include "FamilyTree.hpp"
+#include "FamilyTree.cpp"
 
 using namespace std;
 int main() {
-    family::Tree T("yosef");
-    T.addFather("yosef","tov");
-    T.addFather("tov","yes");
+    string yosef = "yosef";
+    string tov = "tov";
+    string yes = "yes";
+    family::Tree T(yosef);
+    T.addFather(yosef,tov);
+    T.addFather(tov,yes);
+    T.addMother(yosef , "shif");
+    T.addMother(yes , "shlof");
+    T.addMother(yes ,"the" );
+
+    cout << T.Max(T.root, T.size);
 
 
-    string t = T.root->father->father->name;
-    cout << t ;
+
     return 0;
 }

@@ -8,16 +8,19 @@
 using namespace  std;
 class Node{
 public:
-
+ int height ;
+ int sex ;
  string name;
  Node* father;
- Node* mather;
+ Node* mother;
 
  Node(string name)
  {
+     this->height = 0 ;
+     this->sex = 0 ;
      this->name = name;
      this->father = NULL;
-     this->mather = NULL;
+     this->mother = NULL;
 
  };
 
@@ -30,9 +33,10 @@ namespace family {
 
     public:
         Node *root;
-
+        int size ;
         Tree(string name) {
             this->root = new Node(name);
+            size = 1 ;
         };
 
         void addFather( string,  string);
@@ -48,7 +52,11 @@ namespace family {
         void remove(const string);
 
 
-        Node *findthis(const string basicString, Node *pNode);
+        void findthis(const string , Node *pNode , Node **pNode1);
+
+        void findtheFamily(int sex, int count, Node *pNode, Node **pNode1);
+
+        int Max(Node *pNode , int);
     };
 }
 

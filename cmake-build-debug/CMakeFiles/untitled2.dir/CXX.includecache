@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/uriel/CLionProjects/untitled2/FamilyTree.cpp
+FamilyTree.hpp
+/home/uriel/CLionProjects/untitled2/FamilyTree.hpp
+iostream
+-
+string
+-
+
 /home/uriel/CLionProjects/untitled2/FamilyTree.hpp
 iostream
 -
@@ -13,6 +21,6 @@ iostream
 /home/uriel/CLionProjects/untitled2/main.cpp
 iostream
 -
-FamilyTree.hpp
-/home/uriel/CLionProjects/untitled2/FamilyTree.hpp
+FamilyTree.cpp
+/home/uriel/CLionProjects/untitled2/FamilyTree.cpp
 
