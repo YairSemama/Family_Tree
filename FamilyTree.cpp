@@ -1,11 +1,11 @@
 #include "FamilyTree.hpp"
 #include <iostream>
 #include <string>
-#define g "great"
+#include <cmath>
 bool static check = false;
 bool static check1 = false ;
 using namespace family;
-
+using namespace std ;
 
 void family::Tree::addFather( string child, string father) {
     if (this->root == NULL)
@@ -26,7 +26,7 @@ void family::Tree::addFather( string child, string father) {
         temp->father->height = temp->height+1 ;
         temp->father->sex = 1 ;
         this->size++;
-
+        if(maxHeight < temp->father->height) maxHeight = temp->father->height;
 
     }
     check = false ;
@@ -54,6 +54,7 @@ void family::Tree::addMother( string child, string mother) {
         temp->mother->height = temp->height+1 ;
         temp->mother->sex = 2 ;
         this->size++;
+        if(maxHeight < temp->mother->height) maxHeight = temp->mother->height;
 
     }
     check = false ;
@@ -168,7 +169,8 @@ void Tree::remove(const string name)
 
 void Tree::display()
 {
-int MaxHeight = Max(root , this->size);
+    printTheTree(root);
+
 }
 
 void Tree::findthis(const string child, Node *root ,  Node** temp) {
@@ -206,18 +208,83 @@ void Tree::findtheFamily(int sex, int count, Node *root, Node **temp) {
 
 }
 
-int Tree::Max(Node *root  , int size) {
-    static int count = 0 ;
-    static int maxvalue = 0 ;
-    if(root != NULL) count++ ;
-    if(maxvalue < root->height)
+void Tree::printTheTree(Node *root) {
+    if(root == NULL) return;
+    Tree::printTheTree( root->father);
+    Tree::printTheTree(root->mother);
+
+    string tree1 = "      /\\      \n"
+                   "     /\\*\\     \n"
+                   "    /\\O\\*\\    \n"
+                   "   /*/\\/\\/\\   \n"
+                   "  /\\O\\/\\*\\/\\  \n"
+                   " /\\*\\/\\*\\/\\/\\ \n"
+                   "/\\O\\/\\/*/\\/O/\\\n"
+                   "      ||      \n"
+                   "      ||      \n"
+                   "      ||   " ;
+    if(root->height == 0 )
     {
-        maxvalue = root->height ;
+        cout << "Me : " << root->name << endl ;
+        cout << tree1 << endl ;
+
     }
-    if(count) return maxvalue;
-    Tree::Max(root->father , size);
-    Tree::Max(root->mother , size);
+    if (root->sex == 1 && root ->height == 1)
+    {
+       cout << "father :" << root->name  << endl;
+        cout << tree1 << endl ;
+
+    }
+    if (root->sex == 2 && root ->height == 1)
+    {
+        cout << "mother :" << root->name << endl;
+        cout << tree1 << endl ;
+
+    }
+    if (root->sex == 1 && root ->height == 2)
+    {
+        cout << "grandfahter :" << root->name << endl ;
+        cout << tree1 << endl ;
+
+    }
+    if (root->sex == 2 && root ->height == 2)
+    {
+        cout << "grandmother :" << root->name << endl ;
+        cout << tree1 << endl ;
+
+    }
+
+    if(root->sex == 1 && root-> height > 2)
+    {
+        string temp = "great-" ;
+        for (int i = 3; i < root->height ; ++i) {
+           temp = temp + temp;
+        }
+        temp = temp + "grandfather :" + root->name;
+        cout << temp << endl ;
+        cout << tree1 << endl ;
+
+
+    }
+
+    if(root->sex == 2 && root-> height > 2)
+    {
+        string temp = "great-" ;
+        for (int i = 3; i < root->height ; ++i) {
+            temp = temp + temp;
+        }
+        temp = temp + "grandmother :" + root->name;
+        cout << temp << endl ;
+        cout << tree1 << endl ;
+
+    }
+
+
+
+
 }
+
+
 
 
 

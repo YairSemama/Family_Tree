@@ -12,9 +12,9 @@ int main() {
     T.addMother(yosef , "shif");
     T.addMother(yes , "shlof");
     T.addMother(yes ,"the" );
+    T.addMother("the" , "shifooooo");
 
-    cout << T.Max(T.root, T.size);
-
+T.display();
 
 
     return 0;

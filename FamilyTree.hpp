@@ -34,9 +34,11 @@ namespace family {
     public:
         Node *root;
         int size ;
+        int maxHeight;
         Tree(string name) {
             this->root = new Node(name);
             size = 1 ;
+            maxHeight = 0 ;
         };
 
         void addFather( string,  string);
@@ -56,7 +58,7 @@ namespace family {
 
         void findtheFamily(int sex, int count, Node *pNode, Node **pNode1);
 
-        int Max(Node *pNode , int);
+        void printTheTree(Node *pNode);
     };
 }
 

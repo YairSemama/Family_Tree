@@ -13,6 +13,8 @@ iostream
 -
 string
 -
+cmath
+-
 
 /home/uriel/CLionProjects/untitled2/FamilyTree.hpp
 iostream
