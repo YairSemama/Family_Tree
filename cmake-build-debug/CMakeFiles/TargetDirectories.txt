@@ -1,3 +1,3 @@
-/home/uriel/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/uriel/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir
-/home/uriel/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yair/Desktop/CPP/Family_Tree/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yair/Desktop/CPP/Family_Tree/cmake-build-debug/CMakeFiles/untitled2.dir
+/home/yair/Desktop/CPP/Family_Tree/cmake-build-debug/CMakeFiles/edit_cache.dir
