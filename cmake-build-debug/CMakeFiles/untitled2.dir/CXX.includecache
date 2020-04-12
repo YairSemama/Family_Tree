@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/uriel/CLionProjects/untitled2/Demo.cpp
+FamilyTree.cpp
+/home/uriel/CLionProjects/untitled2/FamilyTree.cpp
+iostream
+-
+
 /home/uriel/CLionProjects/untitled2/FamilyTree.cpp
 FamilyTree.hpp
 /home/uriel/CLionProjects/untitled2/FamilyTree.hpp
@@ -19,10 +25,4 @@ cmath
 /home/uriel/CLionProjects/untitled2/FamilyTree.hpp
 iostream
 -
-
-/home/uriel/CLionProjects/untitled2/main.cpp
-iostream
--
-FamilyTree.cpp
-/home/uriel/CLionProjects/untitled2/FamilyTree.cpp
 

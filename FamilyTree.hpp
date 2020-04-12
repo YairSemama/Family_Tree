@@ -2,7 +2,7 @@
 
 #ifndef UNTITLED2_FAMILYTREE_H
 #define UNTITLED2_FAMILYTREE_H
-
+#pragma once
 #include <iostream>
 
 using namespace  std;

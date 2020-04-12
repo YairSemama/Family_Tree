@@ -7,7 +7,7 @@ bool static check1 = false ;
 using namespace family;
 using namespace std ;
 
-void family::Tree::addFather( string child, string father) {
+void Tree::addFather( string child, string father) {
     if (this->root == NULL)
     {
         out_of_range{"The Family tree is Empty!"};
@@ -15,6 +15,7 @@ void family::Tree::addFather( string child, string father) {
     }
     Node *temp = nullptr;
     findthis(child, this->root ,&temp);
+    check = false ;
     if(temp == NULL)
     {
         out_of_range{"cannot fin.id this child!"};
@@ -35,7 +36,7 @@ void family::Tree::addFather( string child, string father) {
 
 }
 
-void family::Tree::addMother( string child, string mother) {
+void Tree::addMother( string child, string mother) {
     if (this->root == NULL)
     {
         out_of_range{"The Family tree is Empty!"};
@@ -43,6 +44,7 @@ void family::Tree::addMother( string child, string mother) {
     }
     Node *temp = nullptr;
     findthis(child, this->root ,&temp);
+    check = false ;
     if(temp == NULL)
     {
         out_of_range{"cannot fin.id this child!"};
@@ -67,9 +69,13 @@ string Tree::relation(const string name)
 {
     Node *temp = nullptr;
     findthis(name, this->root ,&temp);
+    check = false ;
+    if(temp == NULL)
+        return "unrelated" ;
     int height = temp->height;
     int sex = temp->sex ;
-
+    check = false ;
+    if(height == 0 ) return "me " ;
     if(sex == 1 && height == 1) return "father" ;
     if(sex == 2 && height == 1) return  "mother" ;
     if(sex == 1 && height == 2) return "grandfather" ;
@@ -96,9 +102,7 @@ string Tree::relation(const string name)
         }
         return ans ;
     }
-
-
-
+    return "" ;
 }
 
 string Tree::find(const string reletion )
@@ -155,7 +159,7 @@ string Tree::find(const string reletion )
      Node *tempnode = nullptr;
      findtheFamily(sex , count , root , &tempnode);
     check1 = false ;
-    if(tempnode == NULL) return "" ;
+    if(sex == 0 && count == 0 ) return "The tree cannot handle the " + reletion +" relation";
     return tempnode->name ;
 
 }
@@ -163,8 +167,11 @@ string Tree::find(const string reletion )
 void Tree::remove(const string name)
 {
     Node *temp = nullptr;
+    check = false ;
     findthis(name, this->root ,&temp);
+    check = false ;
     delete(temp);
+    temp = NULL ;
 }
 
 void Tree::display()
@@ -186,9 +193,6 @@ void Tree::findthis(const string child, Node *root ,  Node** temp) {
         Tree::findthis(child , root->father , temp);
         Tree::findthis(child , root->mother , temp );
     }
-
-
-
 }
 
 
@@ -198,9 +202,9 @@ void Tree::findtheFamily(int sex, int count, Node *root, Node **temp) {
     if(root->sex  == sex && root->height == count  )
     {
         *temp = root  ;
-        check = true ;
+        check1 = true ;
     }
-    if(!check)
+    if(!check1)
     {
         Tree::findtheFamily(sex ,count , root->father , temp);
         Tree::findtheFamily(sex ,count ,  root->mother , temp );

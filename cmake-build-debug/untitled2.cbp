@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/uriel/CLionProjects/untitled2/main.cpp">
+		<Unit filename="/home/uriel/CLionProjects/untitled2/Demo.cpp">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/uriel/CLionProjects/untitled2/CMakeLists.txt">
