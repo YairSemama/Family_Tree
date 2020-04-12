@@ -37,7 +37,7 @@ int main() {
 	 	cout << ex.what() << endl;  // prints "The tree cannot handle the 'uncle' relation"
 	}
 
-	T.remove("Avraham"); // removes Avraham and Terah
+	T.remove("Yosef"); // removes Avraham and Terah
 	cout << T.relation("Terah") << endl;  // prints "unrelated"
 
     return 0;

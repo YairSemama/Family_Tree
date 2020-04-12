@@ -163,14 +163,18 @@ string Tree::find(const string reletion )
     return tempnode->name ;
 
 }
-
+void deleteFromTree(Node* node){
+    if (node == NULL) return;
+    deleteFromTree(node->mother);
+    deleteFromTree(node->father);
+    delete(node);
+}
 void Tree::remove(const string name)
 {
     Node *temp = nullptr;
-    check = false ;
     findthis(name, this->root ,&temp);
     check = false ;
-    delete(temp);
+    deleteFromTree(temp);
     temp = NULL ;
 }
 
