@@ -111,7 +111,15 @@ string Tree::find(const string reletion )
     int sex = 0 ;
     string granm = "grandmother";
     string granf = "grandfahter";
-
+    if(reletion == "son")
+    {
+        count = 0;
+        sex = 0;
+        Node *tempnode = nullptr;
+        findtheFamily(sex , count , root , &tempnode);
+        check1 = false ;
+        return tempnode->name ;
+    }
     if (reletion == "father")
     {
         count = 1;

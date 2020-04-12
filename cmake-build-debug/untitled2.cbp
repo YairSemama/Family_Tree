@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/yair/Desktop/CPP/Family_Tree/Demo.cpp">
+		<Unit filename="/home/yair/Desktop/CPP/Family_Tree/Test.cpp">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/yair/Desktop/CPP/Family_Tree/CMakeLists.txt">
