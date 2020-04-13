@@ -7,11 +7,11 @@ bool static check1 = false ;
 using namespace family;
 using namespace std ;
 
-void Tree::addFather( string child, string father) {
+Tree& Tree::addFather( string child, string father) {
     if (this->root == NULL)
     {
         out_of_range{"The Family tree is Empty!"};
-        return;
+        return *this;
     }
     Node *temp = nullptr;
     findthis(child, this->root ,&temp);
@@ -19,7 +19,7 @@ void Tree::addFather( string child, string father) {
     if(temp == NULL)
     {
         out_of_range{"cannot fin.id this child!"};
-        return;
+        return *this;
     }
     if(temp != NULL)
     {
@@ -31,16 +31,16 @@ void Tree::addFather( string child, string father) {
 
     }
     check = false ;
-
+    return *this;
 
 
 }
 
-void Tree::addMother( string child, string mother) {
+Tree& Tree::addMother( string child, string mother) {
     if (this->root == NULL)
     {
         out_of_range{"The Family tree is Empty!"};
-        return;
+        return *this;
     }
     Node *temp = nullptr;
     findthis(child, this->root ,&temp);
@@ -48,7 +48,7 @@ void Tree::addMother( string child, string mother) {
     if(temp == NULL)
     {
         out_of_range{"cannot fin.id this child!"};
-        return;
+        return *this;
     }
     if(temp != NULL)
     {
@@ -60,7 +60,7 @@ void Tree::addMother( string child, string mother) {
 
     }
     check = false ;
-
+    return *this;
 
 }
 

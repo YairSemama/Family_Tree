@@ -41,9 +41,9 @@ namespace family {
             maxHeight = 0 ;
         };
 
-        void addFather( string,  string);
+        Tree& addFather( string,  string);
 
-        void addMother(const string, const string);
+        Tree& addMother(const string, const string);
 
         string relation(const string);
 
