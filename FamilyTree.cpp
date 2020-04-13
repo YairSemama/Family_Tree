@@ -75,7 +75,7 @@ string Tree::relation(const string name)
     int height = temp->height;
     int sex = temp->sex ;
     check = false ;
-    if(height == 0 ) return "me " ;
+    if(height == 0 ) return "me" ;
     if(sex == 1 && height == 1) return "father" ;
     if(sex == 2 && height == 1) return  "mother" ;
     if(sex == 1 && height == 2) return "grandfather" ;
@@ -118,6 +118,7 @@ string Tree::find(const string reletion )
         Node *tempnode = nullptr;
         findtheFamily(sex , count , root , &tempnode);
         check1 = false ;
+        if(tempnode == nullptr) return "The tree cannot handle the " + reletion + " relation";
         return tempnode->name ;
     }
     if (reletion == "father")
@@ -167,23 +168,31 @@ string Tree::find(const string reletion )
      Node *tempnode = nullptr;
      findtheFamily(sex , count , root , &tempnode);
     check1 = false ;
-    if(sex == 0 && count == 0 ) return "The tree cannot handle the " + reletion +" relation";
+    if((sex == 0 && count == 0) || tempnode == nullptr ) return "The tree cannot handle the " + reletion +" relation";
     return tempnode->name ;
 
 }
-void deleteFromTree(Node* node){
-    if (node == NULL) return;
-    deleteFromTree(node->mother);
-    deleteFromTree(node->father);
-    delete(node);
+void deleteFromTree(Node** node){
+    if (*node == NULL) return;
+    deleteFromTree(&(*(node))->mother);
+    deleteFromTree(&(*(node))->father);
+    *node = nullptr;
+    delete *node;
 }
 void Tree::remove(const string name)
 {
     Node *temp = nullptr;
     findthis(name, this->root ,&temp);
     check = false ;
-    deleteFromTree(temp);
-    temp = NULL ;
+    deleteFromTree(&temp);
+    findthis(name, this->root ,&temp);
+    if(this->root == temp)
+    {
+        this->root = nullptr;
+        delete this->root;
+    }
+    temp = nullptr;
+    delete temp;
 }
 
 void Tree::display()
@@ -195,7 +204,7 @@ void Tree::display()
 void Tree::findthis(const string child, Node *root ,  Node** temp) {
 
     if(root == NULL) return;
-    if(root->name == child && !check )
+    if(root->name == child && !check)
     {
       *temp = root  ;
       check = true ;
@@ -267,7 +276,6 @@ void Tree::printTheTree(Node *root) {
     {
         cout << "grandmother :" << root->name << endl ;
         cout << tree1 << endl ;
-
     }
 
     if(root->sex == 1 && root-> height > 2)
@@ -279,8 +287,6 @@ void Tree::printTheTree(Node *root) {
         temp = temp + "grandfather :" + root->name;
         cout << temp << endl ;
         cout << tree1 << endl ;
-
-
     }
 
     if(root->sex == 2 && root-> height > 2)
@@ -294,10 +300,6 @@ void Tree::printTheTree(Node *root) {
         cout << tree1 << endl ;
 
     }
-
-
-
-
 }
 
 

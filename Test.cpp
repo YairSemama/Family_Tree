@@ -162,19 +162,49 @@ TEST_CASE ("find") {
             CHECK(test2.find("lama") == string("The tree cannot handle the lama relation"));
             CHECK(test2.find("kaha") == string("The tree cannot handle the kaha relation"));
 }
-TEST_CASE ("find") {
-    Tree test("yair");
-    Tree test2("ori");
-    test2.addMother("ori", "dafna");
-    test2.addMother("dafna", "yona");
-    test2.addFather("ori", "fredi");
-    test2.addFather("fredi", "albert");
-    test2.addMother("fredi", "lusi");
-    test2.addFather("dafna", "ezra");
-    test.addMother("yair", "ester");
-    test.addMother("ester", "ren");
-    test.addFather("yair", "michael");
-    test.addMother("michael", "mami");
-    test.addFather("ester", "albert");
-    test.addFather("michael", "shimon");
+TEST_CASE ("delete") {
+    Tree semama("yair");
+    Tree elia("ori");
+    Tree goldis("shlomo");
+    elia.addMother("ori", "dafna");
+    elia.addMother("dafna", "yona");
+    elia.addFather("ori", "fredi");
+    elia.addFather("fredi", "albert");
+    elia.addMother("fredi", "lusi");
+    elia.addFather("dafna", "ezra");
+    semama.addMother("yair", "ester");
+    semama.addMother("ester", "ren");
+    semama.addFather("yair", "michael");
+    semama.addMother("michael", "mami");
+    semama.addFather("ester", "albert");
+    semama.addFather("michael", "shimon");
+    elia.remove("ori");
+            CHECK(elia.relation("ori") == "unrelated");
+            CHECK(elia.relation("fredi") == "unrelated");
+            CHECK(elia.relation("dafna") == "unrelated");
+            CHECK(elia.relation("ezra") == "unrelated");
+            CHECK(elia.relation("yona") == "unrelated");
+            CHECK(elia.relation("lusi") == "unrelated");
+            CHECK(elia.relation("albert") == "unrelated");
+            CHECK(elia.find("son") == "The tree cannot handle the son relation");
+            CHECK(elia.find("father") == "The tree cannot handle the father relation");
+            CHECK(elia.find("mother") == "The tree cannot handle the mother relation");
+            CHECK(elia.find("grandfather") == "The tree cannot handle the grandfather relation");
+            CHECK(elia.find("grandmother") == "The tree cannot handle the grandmother relation");
+    semama.remove("ester");
+            CHECK(semama.relation("ester")== "unrelated");
+            CHECK(semama.relation("ren")== "unrelated");
+            CHECK(semama.relation("albert")== "unrelated");
+            CHECK(semama.relation("yair")== "me");
+    semama.remove("yair");
+            CHECK(semama.relation("yair")== "unrelated");
+            CHECK(semama.relation("michael")== "unrelated");
+            CHECK(semama.relation("mami")== "unrelated");
+            CHECK(semama.relation("shimon")== "unrelated");
+            CHECK(semama.find("son") == "The tree cannot handle the son relation");
+            CHECK(semama.find("father") == "The tree cannot handle the father relation");
+            CHECK(semama.find("mother") == "The tree cannot handle the mother relation");
+            CHECK(semama.find("grandfather") == "The tree cannot handle the grandfather relation");
+            CHECK(semama.find("grandmother") == "The tree cannot handle the grandmother relation");
+
 }
