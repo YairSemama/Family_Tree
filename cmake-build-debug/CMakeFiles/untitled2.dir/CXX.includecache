@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/uriel/CLionProjects/untitled2/Demo.cpp
+/home/yair/Desktop/CPP/Family_Tree/Demo.cpp
 FamilyTree.cpp
-/home/uriel/CLionProjects/untitled2/FamilyTree.cpp
+/home/yair/Desktop/CPP/Family_Tree/FamilyTree.cpp
 iostream
 -
 
-/home/uriel/CLionProjects/untitled2/FamilyTree.cpp
+/home/yair/Desktop/CPP/Family_Tree/FamilyTree.cpp
 FamilyTree.hpp
-/home/uriel/CLionProjects/untitled2/FamilyTree.hpp
+/home/yair/Desktop/CPP/Family_Tree/FamilyTree.hpp
 iostream
 -
 string
@@ -22,7 +22,7 @@ string
 cmath
 -
 
-/home/uriel/CLionProjects/untitled2/FamilyTree.hpp
+/home/yair/Desktop/CPP/Family_Tree/FamilyTree.hpp
 iostream
 -
 
