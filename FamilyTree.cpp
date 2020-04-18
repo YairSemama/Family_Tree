@@ -18,11 +18,11 @@ Tree& Tree::addFather( string child, string father) {
     check = false ;
     if(temp == NULL)
     {
-        out_of_range{"cannot fin.id this child!"};
-        return *this;
+        throw out_of_range{"cannot find this child!"};
     }
     if(temp != NULL)
     {
+        if(temp->father != NULL) throw out_of_range("aleardy have father");
         temp->father = new Node(father);
         temp->father->height = temp->height+1 ;
         temp->father->sex = 1 ;
@@ -47,11 +47,11 @@ Tree& Tree::addMother( string child, string mother) {
     check = false ;
     if(temp == NULL)
     {
-        out_of_range{"cannot fin.id this child!"};
-        return *this;
+        throw out_of_range{"cannot fin.id this child!"};
     }
     if(temp != NULL)
     {
+        if(temp->mother != NULL) throw out_of_range("aleardy have mother");
         temp->mother = new Node(mother);
         temp->mother->height = temp->height+1 ;
         temp->mother->sex = 2 ;
@@ -107,19 +107,24 @@ string Tree::relation(const string name)
 
 string Tree::find(const string reletion )
 {
-    int count = 0 ;
-    int sex = 0 ;
+    int count = -1 ;
+    int sex = -1 ;
     string granm = "grandmother";
     string granf = "grandfahter";
     if(reletion == "son")
     {
-        count = 0;
-        sex = 0;
+        count = -1;
+        sex = -1;
         Node *tempnode = nullptr;
         findtheFamily(sex , count , root , &tempnode);
         check1 = false ;
-        if(tempnode == nullptr) return "The tree cannot handle the " + reletion + " relation";
+        if(tempnode == nullptr) throw out_of_range("false");
         return tempnode->name ;
+    }
+    if(reletion == "me")
+    {
+        count = 0 ;
+        sex = 0 ;
     }
     if (reletion == "father")
     {
@@ -168,7 +173,7 @@ string Tree::find(const string reletion )
      Node *tempnode = nullptr;
      findtheFamily(sex , count , root , &tempnode);
     check1 = false ;
-    if((sex == 0 && count == 0) || tempnode == nullptr ) return "The tree cannot handle the " + reletion +" relation";
+    if((sex == -1 && count == -1) || tempnode == NULL ) throw out_of_range("cannot find the reletion");
     return tempnode->name ;
 
 }
@@ -182,8 +187,9 @@ void deleteFromTree(Node** node){
 void Tree::remove(const string name)
 {
     Node *temp = nullptr;
-    findthis(name, this->root ,&temp);
+   findthis(name, this->root ,&temp);
     check = false ;
+    if(temp == NULL) throw out_of_range("the name is no in the tree");
     deleteFromTree(&temp);
     findthis(name, this->root ,&temp);
     if(this->root == temp)
