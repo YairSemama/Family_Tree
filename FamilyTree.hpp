@@ -8,11 +8,12 @@
 using namespace  std;
 class Node{
 public:
- int height ;
+ int height  ;
  int sex ;
  string name;
  Node* father;
  Node* mother;
+
 
  Node(string name)
  {
@@ -23,6 +24,19 @@ public:
      this->mother = NULL;
 
  };
+
+    ~ Node(){
+        setFatherNull();
+        setMotherNull();
+    }
+
+    void setFatherNull(){
+        this->father=NULL;
+    }
+
+    void setMotherNull(){
+        this->mother=NULL;
+    }
 
 };
 
@@ -59,6 +73,9 @@ namespace family {
         void findtheFamily(int sex, int count, Node *pNode, Node **pNode1);
 
         void printTheTree(Node *pNode);
+
+
+        void findthischild(const string basicString, Node *pNode, Node **pNode1);
     };
 }
 

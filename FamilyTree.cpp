@@ -4,6 +4,7 @@
 #include <cmath>
 bool static check = false;
 bool static check1 = false ;
+int static check2 = 0 ;
 using namespace family;
 using namespace std ;
 
@@ -196,18 +197,13 @@ void deleteFromTree(Node** node){
 void Tree::remove(const string name)
 {
     Node *temp = nullptr;
-   findthis(name, this->root ,&temp);
+    findthischild(name, this->root ,&temp);
     check = false ;
     if(temp == NULL) throw out_of_range("the name is no in the tree");
-    deleteFromTree(&temp);
-    findthis(name, this->root ,&temp);
-    if(this->root == temp)
-    {
-        this->root = nullptr;
-        delete this->root;
-    }
-    temp = nullptr;
-    delete temp;
+    if(check2 == 1)  deleteFromTree(&temp ->father);
+    if(check2 == 2)  deleteFromTree(&temp ->mother);
+    check2 = 0 ;
+   
 }
 
 void Tree::display()
@@ -239,6 +235,7 @@ void Tree::findtheFamily(int sex, int count, Node *root, Node **temp) {
     {
         *temp = root  ;
         check1 = true ;
+
     }
     if(!check1)
     {
@@ -314,6 +311,28 @@ void Tree::printTheTree(Node *root) {
         cout << temp << endl ;
         cout << tree1 << endl ;
 
+    }
+}
+
+void Tree::findthischild(const string child, Node *root, Node **temp) {
+    if(root == NULL) return;
+    if(root->father != NULL && root->father->name == child && !check)
+    {
+        *temp = root  ;
+        check = true ;
+        check2 = 1;
+    }
+    if(root->mother != NULL && root->mother->name == child && !check)
+    {
+        *temp = root  ;
+        check = true ;
+        check2 = 2 ;
+
+    }
+    if(!check)
+    {
+        Tree::findthischild(child , root->father , temp);
+        Tree::findthischild(child , root->mother , temp );
     }
 }
 
