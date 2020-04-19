@@ -123,32 +123,32 @@ untitled2/fast:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/build
 .PHONY : untitled2/fast
 
-Demo.o: Demo.cpp.o
+FamilyTree.o: FamilyTree.cpp.o
 
-.PHONY : Demo.o
+.PHONY : FamilyTree.o
 
 # target to build an object file
-Demo.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Demo.cpp.o
-.PHONY : Demo.cpp.o
+FamilyTree.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/FamilyTree.cpp.o
+.PHONY : FamilyTree.cpp.o
 
-Demo.i: Demo.cpp.i
+FamilyTree.i: FamilyTree.cpp.i
 
-.PHONY : Demo.i
+.PHONY : FamilyTree.i
 
 # target to preprocess a source file
-Demo.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Demo.cpp.i
-.PHONY : Demo.cpp.i
+FamilyTree.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/FamilyTree.cpp.i
+.PHONY : FamilyTree.cpp.i
 
-Demo.s: Demo.cpp.s
+FamilyTree.s: FamilyTree.cpp.s
 
-.PHONY : Demo.s
+.PHONY : FamilyTree.s
 
 # target to generate assembly for a file
-Demo.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Demo.cpp.s
-.PHONY : Demo.cpp.s
+FamilyTree.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/FamilyTree.cpp.s
+.PHONY : FamilyTree.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... untitled2"
 	@echo "... edit_cache"
-	@echo "... Demo.o"
-	@echo "... Demo.i"
-	@echo "... Demo.s"
+	@echo "... FamilyTree.o"
+	@echo "... FamilyTree.i"
+	@echo "... FamilyTree.s"
 .PHONY : help
 
 

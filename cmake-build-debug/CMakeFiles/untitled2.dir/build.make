@@ -57,27 +57,27 @@ include CMakeFiles/untitled2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/untitled2.dir/flags.make
 
-CMakeFiles/untitled2.dir/Demo.cpp.o: CMakeFiles/untitled2.dir/flags.make
-CMakeFiles/untitled2.dir/Demo.cpp.o: ../Demo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/uriel/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled2.dir/Demo.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/Demo.cpp.o -c /home/uriel/CLionProjects/untitled2/Demo.cpp
+CMakeFiles/untitled2.dir/FamilyTree.cpp.o: CMakeFiles/untitled2.dir/flags.make
+CMakeFiles/untitled2.dir/FamilyTree.cpp.o: ../FamilyTree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/uriel/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled2.dir/FamilyTree.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled2.dir/FamilyTree.cpp.o -c /home/uriel/CLionProjects/untitled2/FamilyTree.cpp
 
-CMakeFiles/untitled2.dir/Demo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/Demo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/uriel/CLionProjects/untitled2/Demo.cpp > CMakeFiles/untitled2.dir/Demo.cpp.i
+CMakeFiles/untitled2.dir/FamilyTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled2.dir/FamilyTree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/uriel/CLionProjects/untitled2/FamilyTree.cpp > CMakeFiles/untitled2.dir/FamilyTree.cpp.i
 
-CMakeFiles/untitled2.dir/Demo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/Demo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/uriel/CLionProjects/untitled2/Demo.cpp -o CMakeFiles/untitled2.dir/Demo.cpp.s
+CMakeFiles/untitled2.dir/FamilyTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled2.dir/FamilyTree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/uriel/CLionProjects/untitled2/FamilyTree.cpp -o CMakeFiles/untitled2.dir/FamilyTree.cpp.s
 
 # Object files for target untitled2
 untitled2_OBJECTS = \
-"CMakeFiles/untitled2.dir/Demo.cpp.o"
+"CMakeFiles/untitled2.dir/FamilyTree.cpp.o"
 
 # External object files for target untitled2
 untitled2_EXTERNAL_OBJECTS =
 
-untitled2: CMakeFiles/untitled2.dir/Demo.cpp.o
+untitled2: CMakeFiles/untitled2.dir/FamilyTree.cpp.o
 untitled2: CMakeFiles/untitled2.dir/build.make
 untitled2: CMakeFiles/untitled2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/uriel/CLionProjects/untitled2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable untitled2"

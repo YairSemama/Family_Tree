@@ -84,7 +84,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/uriel/CLionProjects/untitled2/Demo.cpp">
+		<Unit filename="/home/uriel/CLionProjects/untitled2/FamilyTree.cpp">
+			<Option target="untitled2"/>
+		</Unit>
+		<Unit filename="/home/uriel/CLionProjects/untitled2/FamilyTree.hpp">
 			<Option target="untitled2"/>
 		</Unit>
 		<Unit filename="/home/uriel/CLionProjects/untitled2/CMakeLists.txt">

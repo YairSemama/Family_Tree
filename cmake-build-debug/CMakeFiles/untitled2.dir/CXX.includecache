@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/uriel/CLionProjects/untitled2/FamilyTree.cpp
+FamilyTree.hpp
+/home/uriel/CLionProjects/untitled2/FamilyTree.hpp
+iostream
+-
+string
+-
+cmath
+-
+
+/home/uriel/CLionProjects/untitled2/FamilyTree.hpp
+iostream
+-
+
