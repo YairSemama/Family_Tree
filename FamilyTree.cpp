@@ -154,7 +154,12 @@ string Tree::find(const string reletion )
          size_t temp = reletion.find("grandmother") ;
          if(temp != string::npos)
          {
+
              temp = (temp) / 6;
+             for (int i = 0; i < reletion.size(); ++i)
+             {
+                if(reletion[i] < 97 || reletion[i] > 122 || reletion[i] != 45) throw out_of_range("not good reletion");
+             }
              count = temp + 2;
              sex = 2;
          }
@@ -165,6 +170,10 @@ string Tree::find(const string reletion )
         size_t temp = reletion.find("grandfather") ;
         if(temp != string::npos)
         {
+            for (int i = 0; i < reletion.size(); ++i)
+            {
+                if(reletion[i] < 97 || reletion[i] > 122 || reletion[i] != 45) throw out_of_range("not good reletion");
+            }
             temp = (temp) / 6;
             count = temp + 2;
             sex = 1;
